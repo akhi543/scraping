@@ -11,4 +11,4 @@ soup = BeautifulSoup(data)
 
 wtag = soup.select('.SetPageTerm-wordText > .TermText')
 
-w = [i.get_text() for i in w]
+w = [i.get_text() for i in wtag]
