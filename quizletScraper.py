@@ -11,4 +11,4 @@ soup = BeautifulSoup(data)
 
 wtag = soup.select('.SetPageTerm-wordText > .TermText')
 
-w = [i.get_text() for i in wtag]
+w = [i.get_text().encode("utf-8") for i in wtag]
