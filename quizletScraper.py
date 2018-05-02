@@ -1,5 +1,5 @@
 # scrap quizlet word lists
-# prework: install has requests, bs4 module
+# prework: install requests, bs4 module
 
 from bs4 import BeautifulSoup
 import requests
@@ -12,6 +12,7 @@ wtag = soup.select('.SetPageTerm-wordText > .TermText')
 allw = [i.get_text().encode("utf-8") for i in wtag]
 
 
+import re
 # words from google sheet
 a = """trite    sanction    intrepid    pernicious
 hegemony    irrevocable dilettante  
