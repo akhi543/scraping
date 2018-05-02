@@ -9,26 +9,35 @@ data = r.text
 
 soup = BeautifulSoup(data)
 wtag = soup.select('.SetPageTerm-wordText > .TermText')
-allw = [i.get_text().encode("utf-8") for i in wtag]
+allw = [i.get_text().encode("utf-8").lower() for i in wtag]
 
 
 import re
 # words from google sheet
-a = """trite    sanction    intrepid    pernicious
-hegemony    irrevocable dilettante  
-ravenous    obsequious  poignant    winsome
-arcane  tractable   inscrutable precipitous
-munificent  resurgent   rescind haphazard
-garrulous   constituent reverent    
-prolific    tempered    myriad  
-taciturn        pernicious  
-sycophant       circumscribe    
-sporadic        inimical    
-subversive      inveterate  
-        repudiate   """
+a = """
+deleterious	jovial	droit
+polemic	transient	nonplussed
+maladroit	rebuke	dilatory
+dispassionate	impartial	sullen
+furtive	stringent	flux
+mendacity	economical	capricious
+elicit	appease	polemic
+erudite	disseminate	edifying
+posit		indecorous
+duress		placate
+ignominious		esoteric
+pejorative - disapprove		efficacious
+reproach		opulence
+bolster		
+banality		
+askance		
+maverick		
+		
+"""
 a = re.sub('\n', ' ', a)
 a = re.sub(' +', ' ', a)
 b = a.split()
+b = [i.lower() for i in b]
 writtenw = b
 
 
