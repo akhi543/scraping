@@ -3,6 +3,7 @@
 
 from bs4 import BeautifulSoup
 import requests
+import re
 url = raw_input("Enter a website to extract the URL's from: ")
 r  = requests.get(url)
 data = r.text
@@ -12,7 +13,7 @@ wtag = soup.select('.SetPageTerm-wordText > .TermText')
 allw = [i.get_text().encode("utf-8").lower() for i in wtag]
 
 
-import re
+
 # words from google sheet
 a = """
 deleterious	jovial	droit
